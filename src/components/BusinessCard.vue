@@ -1,19 +1,18 @@
 <template>
   <div class="business-card">
-    <header class="profile-header">
+    <header class="profile-header animate__animated animate__fadeInUp">
       <div class="profile-picture">
         <img src="../assets/images/ava.jpg" alt="Profile Picture" />
         <div class="contact-info">
           <p>Email: {{ email }}</p>
-          <p>Phone: {{ phone }}</p>
         </div>
       </div>
       <h1>{{ fullName }}</h1>
       <p>Software Engineer (Frontend)</p>
     </header>
 
-    <section class="experience">
-      <h2>Опыт работы</h2>
+    <section class="experience animate__animated animate__fadeInUp">
+      <h2 class="animate__animated animate__fadeInUp">Опыт работы</h2>
       <div v-for="(job, index) in experience" :key="index" class="job animate__animated animate__fadeInUp">
         <article>
           <h3>{{ job.position }} - {{ job.company }}</h3>
@@ -32,7 +31,7 @@
       </ul>
     </section>
 
-    <footer class="social-footer">
+    <footer class="social-footer animate__animated">
       <h2>Социальные сети</h2>
       <ul class="social-links">
         <li><a :href="githubUrl">GitHub</a></li>

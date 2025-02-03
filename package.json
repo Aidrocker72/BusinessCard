@@ -2,7 +2,7 @@
   "name": "my-business-card",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aidrocker72.github.io/BusinessCard/",
+  "homepage": "https://aidrocker72.github.io/BusinessCard",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

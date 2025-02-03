@@ -1,73 +1,111 @@
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Центрирование текста вокруг фото */
+  }
+  
+  .profile-picture {
+    margin-bottom: 20px;
+  }
+  
+  .profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .contact-info {
+    text-align: center; /* Центрирование контактов под фото */
+  }
+
+  /* Общие настройки */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-}
-
-.business-card {
+  }
+  
+  .business-card {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #fff;
-    text-align: center;
-}
-
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-picture img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    text-align: left; /* Выравнивание текста по левому краю */
+  }
+  
+  /* Заголовки */
+  h1, h2, h3 {
+    color: #333; /* Темный цвет для заголовков */
+    font-weight: bold;
     margin-bottom: 10px;
-}
-
-.contact-info p {
-    margin: 5px 0;
-}
-
-h1 {
+  }
+  
+  h1 {
     font-size: 2em;
-    margin-bottom: 10px;
-}
-
-section {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-}
-
-h2 {
+  }
+  
+  h2 {
     font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.job h3 {
+    border-bottom: 2px solid #ddd; /* Линия под заголовком */
+    padding-bottom: 5px;
+  }
+  
+  h3 {
     font-size: 1.2em;
-    margin-bottom: 5px;
-}
-
-.social-footer {
+  }
+  
+  /* Основной текст */
+  p, ul, li {
+    color: #555; /* Серый цвет для основного текста */
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  
+  /* Чипсы для навыков */
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Пробел между чипсами */
+    margin-top: 10px;
+  }
+  
+  .chip {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #e0e0e0; /* Светло-серый фон */
+    border-radius: 20px; /* Круглые углы */
+    font-size: 0.9em;
+    color: #333; /* Темный текст */
+    cursor: pointer; /* Изменение курсора при наведении */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+  }
+  
+  .chip:hover {
+    background-color: #007bff; /* Синий цвет при наведении */
+    color: white; /* Белый текст при наведении */
+    transform: scale(1.1); /* Увеличение размера при наведении */
+  }
+  
+  /* Разделение заголовков от основного текста */
+  section {
     margin-top: 20px;
-    border-top: 1px solid #ccc;
     padding-top: 10px;
-}
-
-.social-links li {
-    margin: 5px 0;
-}
-
-.social-links a {
+  }
+  
+  .experience .job, .social-footer {
+    margin-bottom: 20px;
+  }
+  
+  /* Социальные сети */
+  .social-links a {
     color: #007bff;
     text-decoration: none;
-}
-
-.social-links a:hover {
+  }
+  
+  .social-links a:hover {
     text-decoration: underline;
-}
+  }

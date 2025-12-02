@@ -1,111 +1,145 @@
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; /* Центрирование текста вокруг фото */
-  }
-  
-  .profile-picture {
-    margin-bottom: 20px;
-  }
-  
-  .profile-picture img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-  }
-  
-  .contact-info {
-    text-align: center; /* Центрирование контактов под фото */
-  }
-
-  /* Общие настройки */
+/* Общие настройки */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-  }
-  
-  .business-card {
-    max-width: 600px;
-    margin: 20px auto;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    text-align: left; /* Выравнивание текста по левому краю */
-  }
-  
-  /* Заголовки */
-  h1, h2, h3 {
-    color: #333; /* Темный цвет для заголовков */
+    text-align: left;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    color: #333;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 2em;
-  }
-  
-  h2 {
+}
+
+h2 {
     font-size: 1.5em;
-    border-bottom: 2px solid #ddd; /* Линия под заголовком */
+    border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
-  }
-  
-  h3 {
+}
+
+h3 {
     font-size: 1.2em;
-  }
-  
-  /* Основной текст */
-  p, ul, li {
-    color: #555; /* Серый цвет для основного текста */
+}
+
+/* Основной текст */
+p, ul, li {
+    color: #555;
     font-size: 1em;
     line-height: 1.6;
-  }
-  
-  /* Чипсы для навыков */
-  .skill-chips {
+}
+
+/* Навигация */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #f0f0f0;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar a.router-link-active,
+.navbar a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Профильный заголовок */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* Чипсы для навыков */
+.skill-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Пробел между чипсами */
+    gap: 10px;
     margin-top: 10px;
-  }
-  
-  .chip {
+}
+
+.chip {
     display: inline-block;
     padding: 8px 12px;
-    background-color: #e0e0e0; /* Светло-серый фон */
-    border-radius: 20px; /* Круглые углы */
+    background-color: #e0e0e0;
+    border-radius: 20px;
     font-size: 0.9em;
-    color: #333; /* Темный текст */
-    cursor: pointer; /* Изменение курсора при наведении */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
-  }
-  
-  .chip:hover {
-    background-color: #007bff; /* Синий цвет при наведении */
-    color: white; /* Белый текст при наведении */
-    transform: scale(1.1); /* Увеличение размера при наведении */
-  }
-  
-  /* Разделение заголовков от основного текста */
-  section {
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.chip:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Разделение заголовков от основного текста */
+section {
     margin-top: 20px;
     padding-top: 10px;
-  }
-  
-  .experience .job, .social-footer {
+}
+
+/* Работа */
+.job, .social-footer {
     margin-bottom: 20px;
-  }
-  
-  /* Социальные сети */
-  .social-links a {
+}
+
+/* Социальные сети */
+.social-links a {
     color: #007bff;
     text-decoration: none;
-  }
-  
-  .social-links a:hover {
+}
+
+.social-links a:hover {
     text-decoration: underline;
-  }
+}
+
+/* Проекты */
+.project {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9;
+}
+
+/* Основной контент */
+.main-content {
+    min-height: 500px;
+}

@@ -1,0 +1,135 @@
+@use './variables' as *;
+
+.skills {
+  text-align: left;
+  padding: $spacing-l 0;
+
+  h2 {
+    font-size: $font-size-xl;
+    color: $primary-color;
+    margin-top: 0;
+    margin-bottom: $spacing-m;
+    font-weight: 700;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: $primary-gradient;
+      border-radius: 2px;
+    }
+ }
+
+  h3 {
+    font-size: $font-size-l;
+    color: $dark-text;
+    margin-top: $spacing-l;
+    margin-bottom: $spacing-s;
+    font-weight: 600;
+  }
+
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-s;
+    margin-top: $spacing-m;
+    margin-bottom: $spacing-l;
+  }
+
+  &__chip {
+    display: inline-block;
+    padding: $spacing-s $spacing-m;
+    background: rgba(67, 97, 238, 0.1);
+    border: 1px solid rgba(67, 97, 238, 0.2);
+    border-radius: $border-radius-m;
+    font-size: $font-size-s;
+    color: $primary-color;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    &:hover {
+      background: $primary-gradient;
+      color: $white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+      
+      &::before {
+        left: 10%;
+      }
+    }
+  }
+
+  ul {
+    color: $light-text;
+    line-height: 1.6;
+    margin-top: $spacing-s;
+    margin-bottom: $spacing-m;
+    padding-left: $spacing-l;
+  }
+
+  li {
+    margin-bottom: $spacing-s;
+    font-size: $font-size-m;
+ }
+}
+
+// Адаптив для планшетов и мобильных устройств
+@media (max-width: $tablet-breakpoint) {
+  .skills {
+    padding: $spacing-m 0;
+    
+    h2,
+    h3 {
+      font-size: $font-size-l;
+    }
+    
+    &__chips {
+      gap: $spacing-xs;
+      margin-top: $spacing-s;
+      margin-bottom: $spacing-m;
+    }
+    
+    &__chip {
+      padding: $spacing-xs $spacing-s;
+      font-size: $font-size-xs;
+    }
+    
+    ul {
+      padding-left: $spacing-m;
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .skills {
+    padding: $spacing-s 0;
+    
+    &__chips {
+      flex-direction: column;
+      gap: $spacing-s;
+    }
+    
+    &__chip {
+      padding: $spacing-s $spacing-m;
+      font-size: $font-size-s;
+      width: fit-content;
+    }
+  }
+}

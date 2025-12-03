@@ -1,0 +1,176 @@
+@use './variables' as *;
+
+.projects {
+  text-align: left;
+ padding: $spacing-l 0;
+
+  h2 {
+    font-size: $font-size-xl;
+    color: $primary-color;
+    margin-top: 0;
+    margin-bottom: $spacing-m;
+    font-weight: 700;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: $primary-gradient;
+      border-radius: 2px;
+    }
+ }
+
+  h3 {
+    font-size: $font-size-l;
+    color: $dark-text;
+    margin-top: $spacing-l;
+    margin-bottom: $spacing-s;
+    font-weight: 600;
+  }
+
+  &__list {
+    margin-top: $spacing-l;
+  }
+
+  &__item {
+    margin-bottom: $spacing-xl;
+    padding: $spacing-l;
+    border-radius: $border-radius-l;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: $accent-gradient;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(31, 38, 135, 0.25);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: $secondary-color;
+      font-size: $font-size-m;
+      position: relative;
+      
+      &::after {
+        content: '✦';
+        color: $accent-color;
+        margin-right: $spacing-s;
+      }
+    }
+
+    p {
+      color: $dark-text;
+      margin: $spacing-s 0;
+      font-size: $font-size-m;
+    }
+
+    ul {
+      color: $light-text;
+      line-height: 1.6;
+      margin-top: $spacing-s;
+      padding-left: $spacing-l;
+    }
+
+    li {
+      margin-bottom: $spacing-s;
+      font-size: $font-size-m;
+    }
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: $primary-color;
+        transition: width 0.3s ease;
+      }
+      
+      &:hover {
+        color: $primary-dark;
+        
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  ul {
+    color: $light-text;
+    line-height: 1.6;
+    margin-top: $spacing-s;
+    margin-bottom: $spacing-m;
+    padding-left: $spacing-l;
+  }
+
+  li {
+    margin-bottom: $spacing-s;
+    font-size: $font-size-m;
+  }
+}
+
+// Адаптив для планшетов и мобильных устройств
+@media (max-width: $tablet-breakpoint) {
+  .projects {
+    padding: $spacing-m 0;
+    
+    h2,
+    h3 {
+      font-size: $font-size-l;
+    }
+    
+    &__item {
+      margin-bottom: $spacing-l;
+      padding: $spacing-m;
+      
+      h3 {
+        font-size: $font-size-m;
+      }
+    }
+    
+    ul {
+      padding-left: $spacing-m;
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .projects {
+    padding: $spacing-s 0;
+    
+    &__item {
+      margin-bottom: $spacing-m;
+      padding: $spacing-s;
+    }
+    
+    ul {
+      padding-left: $spacing-s;
+    }
+  }
+}

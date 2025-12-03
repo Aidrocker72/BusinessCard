@@ -1,0 +1,178 @@
+@use './variables' as *;
+
+.about {
+  &__profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: $spacing-xxl;
+    padding-top: $spacing-xl;
+    
+    &--centered {
+      text-align: center;
+    }
+  }
+
+  &__profile-picture {
+    margin-bottom: $spacing-l;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: $primary-gradient;
+      border-radius: $border-radius-full;
+      z-index: -1;
+      filter: blur(20px);
+      opacity: 0.3;
+    }
+    
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: $border-radius-full;
+      object-fit: cover;
+      border: 4px solid $white;
+      box-shadow: 0 8px 20px rgba(67, 97, 238, 0.2);
+    }
+  }
+
+  &__content {
+    text-align: left;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: $border-radius-l;
+    padding: $spacing-xl;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+
+    h2 {
+      font-size: $font-size-xl;
+      color: $primary-color;
+      margin-top: 0;
+      margin-bottom: $spacing-m;
+      font-weight: 700;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: $primary-gradient;
+        border-radius: 2px;
+      }
+    }
+
+    h3 {
+      font-size: $font-size-l;
+      color: $dark-text;
+      margin-top: $spacing-l;
+      margin-bottom: $spacing-s;
+      font-weight: 600;
+    }
+
+    p {
+      color: $dark-text;
+      margin-bottom: $spacing-s;
+      font-size: $font-size-m;
+    }
+
+    ul {
+      color: $light-text;
+      line-height: 1.6;
+      margin-top: $spacing-s;
+      margin-bottom: $spacing-m;
+      padding-left: $spacing-l;
+    }
+
+    li {
+      margin-bottom: $spacing-s;
+      font-size: $font-size-m;
+      position: relative;
+      
+      &::marker {
+        color: $primary-color;
+      }
+    }
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: $primary-color;
+        transition: width 0.3s ease;
+      }
+      
+      &:hover {
+        color: $primary-dark;
+        
+        &::after {
+          width: 10%;
+        }
+      }
+    }
+  }
+}
+
+// Адаптив для планшетов и мобильных устройств
+@media (max-width: $tablet-breakpoint) {
+  .about {
+    &__profile-header {
+      padding-top: $spacing-l;
+      margin-bottom: $spacing-xl;
+    }
+    
+    &__profile-picture {
+      margin-bottom: $spacing-m;
+      
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    
+    &__content {
+      padding: $spacing-l;
+      
+      h2,
+      h3 {
+        margin-top: $spacing-l;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .about {
+    &__profile-picture {
+      margin-bottom: $spacing-s;
+      
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+    
+    &__content {
+      padding: $spacing-m;
+    }
+  }
+}

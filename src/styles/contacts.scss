@@ -1,0 +1,121 @@
+@use './variables' as *;
+
+.contacts {
+  text-align: left;
+ padding: $spacing-l 0;
+
+  h2 {
+    font-size: $font-size-xl;
+    color: $primary-color;
+    margin-top: 0;
+    margin-bottom: $spacing-m;
+    font-weight: 700;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: $primary-gradient;
+      border-radius: 2px;
+    }
+ }
+
+  h3 {
+    font-size: $font-size-l;
+    color: $dark-text;
+    margin-top: $spacing-l;
+    margin-bottom: $spacing-s;
+    font-weight: 600;
+ }
+
+  &__social-links {
+    margin-top: $spacing-m;
+    margin-bottom: $spacing-l;
+
+    li {
+      margin-bottom: $spacing-m;
+      list-style: none;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      padding: $spacing-s $spacing-m;
+      color: $primary-color;
+      text-decoration: none;
+      border-radius: $border-radius-m;
+      transition: all 0.3s ease;
+      font-size: $font-size-m;
+      background: rgba(67, 97, 238, 0.05);
+      border: 1px solid rgba(67, 97, 238, 0.1);
+      
+      &:hover {
+        background: $primary-gradient;
+        color: $white;
+        transform: translateX(8px);
+        box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+      }
+    }
+  }
+
+  ul {
+    color: $light-text;
+    line-height: 1.6;
+    margin-top: $spacing-s;
+    margin-bottom: $spacing-m;
+    padding-left: $spacing-l;
+  }
+
+ li {
+    margin-bottom: $spacing-s;
+    font-size: $font-size-m;
+ }
+}
+
+// Адаптив для планшетов и мобильных устройств
+@media (max-width: $tablet-breakpoint) {
+  .contacts {
+    padding: $spacing-m 0;
+    
+    h2,
+    h3 {
+      font-size: $font-size-l;
+    }
+    
+    &__social-links {
+      a {
+        padding: $spacing-s;
+        font-size: $font-size-s;
+      }
+    }
+    
+    ul {
+      padding-left: $spacing-m;
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .contacts {
+    padding: $spacing-s 0;
+    
+    h2,
+    h3 {
+      font-size: $font-size-m;
+    }
+    
+    &__social-links {
+      a {
+        font-size: $font-size-xs;
+      }
+    }
+    
+    ul {
+      padding-left: $spacing-s;
+    }
+  }
+}

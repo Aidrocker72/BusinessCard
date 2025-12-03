@@ -1,0 +1,128 @@
+@use './variables' as *;
+
+.app {
+  &__container {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: $spacing-l;
+    padding-top: 100px;
+  }
+
+ &__navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: $spacing-m 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    margin-bottom: $spacing-xl;
+    border-bottom: 1px solid rgba(67, 97, 238, 0.1);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    &-link {
+      text-decoration: none;
+      color: $dark-text;
+      padding: $spacing-s $spacing-m;
+      border-radius: $border-radius-m;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+      margin: $spacing-xs;
+      background: transparent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: $primary-gradient;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      &.router-link-exact-active {
+        color: $primary-color;
+        
+        &::after {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  &__main-content {
+    min-height: 500px;
+    border-radius: $border-radius-l;
+    padding: $spacing-l;
+  }
+}
+
+.fade {
+  &-enter-active,
+ &-leave-active {
+    transition: opacity 0.3s ease;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+}
+
+// Адаптив для планшетов и мобильных устройств
+@media (max-width: $tablet-breakpoint) {
+  .app {
+    &__container {
+      padding: $spacing-m;
+      padding-top: 80px;
+    }
+    
+    &__navbar {
+      padding: $spacing-s 0;
+      flex-direction: column;
+      align-items: center;
+      
+      &-link {
+        padding: $spacing-xs $spacing-s;
+        margin: $spacing-xs 0;
+      }
+    }
+    
+    &__main-content {
+      min-height: 400px;
+      padding: $spacing-m;
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .app {
+    &__container {
+      padding: $spacing-s;
+      padding-top: 70px;
+    }
+    
+    &__navbar {
+      &-link {
+        padding: $spacing-xs;
+        font-size: $font-size-s;
+      }
+    }
+    
+    &__main-content {
+      padding: $spacing-s;
+    }
+  }
+}

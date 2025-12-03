@@ -1,0 +1,98 @@
+@use './variables' as *;
+
+// Адаптив для планшетов и мобильных устройств
+@media (max-width: 768px) {
+  .app__container {
+    padding: $spacing-m;
+    padding-top: 80px;
+  }
+  
+  .app__navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-s 0;
+    
+    &-link {
+      padding: $spacing-xs $spacing-s;
+      margin: $spacing-xs;
+      font-size: $font-size-s;
+    }
+  }
+  
+  .about__profile-header {
+    padding-top: $spacing-l;
+    margin-bottom: $spacing-xl;
+  }
+  
+  .about__profile-picture img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .skills,
+  .experience,
+  .contacts,
+  .projects {
+    padding: $spacing-m 0;
+  }
+  
+  .skills__chips {
+    flex-direction: column;
+    gap: $spacing-s;
+  }
+  
+  .skills__chip {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .app__container {
+    padding: $spacing-s;
+    padding-top: 70px;
+  }
+  
+  .app__navbar-link {
+    padding: $spacing-xs;
+    font-size: $font-size-xs;
+  }
+  
+  .about__profile-picture img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .skills,
+  .experience,
+  .contacts,
+  .projects {
+    padding: $spacing-s 0;
+  }
+  
+  h1 { 
+    font-size: $font-size-xl; 
+  }
+  
+  h2 { 
+    font-size: $font-size-l; 
+  }
+  
+  h3 { 
+    font-size: $font-size-m; 
+  }
+  
+  p { 
+    font-size: $font-size-s; 
+  }
+  
+  .experience__job,
+  .projects__item,
+  .contacts__social-links a {
+    padding: $spacing-m;
+  }
+  
+  .app__navbar-link {
+    width: 100%;
+    text-align: center;
+  }
+}

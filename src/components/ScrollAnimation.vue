@@ -1,5 +1,8 @@
 <template>
-  <div ref="elementRef" class="scroll-animation" :class="{ 'scroll-animation--animated': isAnimated }" :data-animation="animationType">
+  <div
+    ref="elementRef" class="scroll-animation"
+    :class="{ 'scroll-animation--animated': isAnimated }" :data-animation="animationType"
+  >
     <slot></slot>
   </div>
 </template>

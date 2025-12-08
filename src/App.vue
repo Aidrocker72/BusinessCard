@@ -17,7 +17,9 @@
         <router-link to="/experience" class="app__navbar-link" @click="closeMenu">
           Опыт работы
         </router-link>
-        <!-- <router-link to="/projects" class="app__navbar-link">Pet projects</router-link> -->
+        <router-link to="/projects" class="app__navbar-link" @click="closeMenu">
+          Pet projects
+        </router-link>
         <router-link to="/contacts" class="app__navbar-link" @click="closeMenu">
           Контакты
         </router-link>

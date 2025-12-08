@@ -8,36 +8,14 @@
     <div class="projects__list">
       <ScrollAnimation animation-type="fade-up">
         <div class="projects__item">
-          <h3>Система управления задачами</h3>
-          <p>Веб-приложение для управления личными и командными задачами с использованием Vue 3 и Pinia. Реализованы функции создания, редактирования и отслеживания задач, а также фильтрация и сортировка.</p>
+          <h3>Vue Mini CRM</h3>
+          <p>Мини-приложение CRM (Customer Relationship Management) с открытым исходным кодом, разработанное с использованием современных технологий Vue.js, TypeScript и Vite. Демонстрирует лучшие практики разработки на Vue 3 с Composition API и модульной архитектурой.
+          </p>
           <ul>
-            <li>Технологии: Vue 3, Pinia, Composition API, SCSS</li>
-            <li>Особенности: Реализация архитектуры FSD, локальная типизация, система уведомлений</li>
-            <li>GitHub: <a href="https://github.com/Aidrocker72" target="_blank">https://github.com/Aidrocker72</a></li>
-          </ul>
-        </div>
-      </ScrollAnimation>
-      
-      <ScrollAnimation animation-type="fade-up">
-        <div class="projects__item">
-          <h3>Финансовый трекер</h3>
-          <p>Приложение для отслеживания личных финансов и бюджета. Позволяет вести учет доходов и расходов, строить графики и анализировать траты.</p>
-          <ul>
-            <li>Технологии: Vue 3, TypeScript, Vuetify, IndexedDB</li>
-            <li>Особенности: Локальное хранение данных, диаграммы и графики, система категорий расходов</li>
-            <li>GitHub: <a href="https://github.com/Aidrocker72" target="_blank">https://github.com/Aidrocker72</a></li>
-          </ul>
-        </div>
-      </ScrollAnimation>
-      
-      <ScrollAnimation animation-type="fade-up">
-        <div class="projects__item">
-          <h3>Мессенджер</h3>
-          <p>Веб-мессенджер с поддержкой чатов, групповых бесед и отправки файлов. Реализована система авторизации и реал-тайм обмен сообщениями.</p>
-          <ul>
-            <li>Технологии: Vue 3, WebSocket, Vuex, Socket.io</li>
-            <li>Особенности: Реал-тайм коммуникация, поддержка медиа-файлов, чаты и группы</li>
-            <li>GitHub: <a href="https://github.com/Aidrocker72" target="_blank">https://github.com/Aidrocker72</a></li>
+            <li>Технологии: Vue 3, TypeScript, Vite, Vue Router, Pinia, Sass</li>
+            <li>Особенности: Управление клиентами и сделками, воронка продаж с drag-and-drop, панель управления, адаптивный дизайн, полная типизация, архитектура FSD</li>
+            <li>GitHub: <a href="https://github.com/Aidrocker72/pet_project_crm" target="_blank">https://github.com/Aidrocker72/pet_project_crm</a></li>
+            <li>Демо: <a href="https://aidrocker72.github.io/pet_project_crm/about" target="_blank">https://aidrocker72.github.io/pet_project_crm/about</a></li>
           </ul>
         </div>
       </ScrollAnimation>

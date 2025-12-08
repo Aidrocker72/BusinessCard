@@ -15,7 +15,7 @@
             <li>Технологии: Vue 3, TypeScript, Vite, Vue Router, Pinia, Sass</li>
             <li>Особенности: Управление клиентами и сделками, воронка продаж с drag-and-drop, панель управления, адаптивный дизайн, полная типизация, архитектура FSD</li>
             <li>GitHub: <a href="https://github.com/Aidrocker72/pet_project_crm" target="_blank">https://github.com/Aidrocker72/pet_project_crm</a></li>
-            <li>Демо: <a href="https://aidrocker72.github.io/pet_project_crm/about" target="_blank">https://aidrocker72.github.io/pet_project_crm/about</a></li>
+            <li>Демо: <a href="https://aidrocker72.github.io/pet_project_crm" target="_blank">https://aidrocker72.github.io/pet_project_crm/about</a></li>
           </ul>
         </div>
       </ScrollAnimation>

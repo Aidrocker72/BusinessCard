@@ -4,7 +4,7 @@
       <h2>Навыки</h2>
     </scroll-animation>
 
-    <scroll-animation animation-type="fade-up" v-for="(level, index) in skillLevels" :key="index">
+    <scroll-animation animation-type="fade-up" v-for="(level, index) in SKILLS" :key="index">
       <h3>{{ level.title }}</h3>
       <div class="skills__chips">
         <span v-for="(skill, idx) in level.items" :key="idx" class="skills__chip">{{ skill }}</span>
@@ -14,48 +14,11 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
-import ScrollAnimation from './ScrollAnimation.vue'
+import { reactive } from 'vue';
+import ScrollAnimation from '@/components/ScrollAnimation.vue';
+import { SKILLS } from '@/constants/skills';
 
 defineOptions({
   name: 'Skills'
-})
-
-const skillLevels = reactive([
-  {
-    title: 'Средний уровень',
-    items: [
-      'HTML5',
-      'CSS3',
-      'JavaScript',
-      'Material UI',
-      'Sass',
-      'Vue',
-      'Nuxt',
-      'БЭМ',
-      'TypeScript',
-      'Vuetify',
-      'Composition API',
-      'Git',
-      'REST API',
-      'Jira',
-      'Figma',
-      'React',
-      'Redux',
-      'ООП',
-      'Делегирование',
-      'Декомпозиция бизнес-процессов',
-      'Next.js',
-      'Postman',
-      'UI',
-      'BEM',
-      'Flex',
-      'Pinia',
-      'Jest',
-      'React-query',
-      'CI/CD',
-      'OpenAI',
-    ]
-  },
-])
+});
 </script>

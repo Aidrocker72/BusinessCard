@@ -32,5 +32,5 @@ import { BlockTypeEnum } from '@/enums/BlocksTypeEnum';
 
 defineOptions({
   name: 'Contacts'
-})
+});
 </script>

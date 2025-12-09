@@ -7,19 +7,20 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { IScrollAnimation } from '@/interfaces/props/IScrollAnimation';
 
-const props = defineProps({
-  animationType: {
-    type: String,
-    default: 'fade-up'
-  }
-})
+defineOptions({
+  name: 'ScrollAnimation'
+});
 
-const isAnimated = ref(false)
-const elementRef = ref(null)
-let observer = null
+const { animationType = 'fade-up'} = defineProps<IScrollAnimation>();
+
+
+const isAnimated = ref(false);
+const elementRef = ref(null);
+let observer: IntersectionObserver | null = null;
 
 const initObserver = () => {
   if (!elementRef.value) return
@@ -36,22 +37,18 @@ const initObserver = () => {
   }, {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
-  })
+  });
 
-  observer.observe(elementRef.value)
-}
+  observer.observe(elementRef.value);
+};
 
 onMounted(() => {
-  initObserver()
-})
+  initObserver();
+});
 
 onBeforeUnmount(() => {
   if (observer) {
-    observer.disconnect()
+    observer.disconnect();
   }
-})
-
-defineOptions({
-  name: 'ScrollAnimation'
-})
+});
 </script>

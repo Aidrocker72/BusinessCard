@@ -4,22 +4,23 @@
       <h2>Контакты</h2>
       <p>Если у вас есть вопросы или предложения о сотрудничестве, пожалуйста, свяжитесь со мной:</p>
       
-      <ul class="contacts__social-links" v-for="{ id, type, link } in CONTACTS" :key="item.id">
-        <template v-if="id !== 1">
-          <li v-if="type === BlockTypeEnum.MAIL">
-            <a :href="`mailto:${link}`">
-              {{ value }}: {{ link }}
+      <ul class="contacts__social-links" v-for="item in CONTACTS" :key="item.id">
+        <template v-if="item.id !== 1">
+          <li v-if="item.type === BlockTypeEnum.MAIL">
+            <a :href="`mailto:${item.link}`">
+              {{ item.value }}: {{ item.link }}
             </a>
           </li>
-          <li v-else-if="type === BlockTypeEnum.LINK">
-            <a :href="link" target="_blank">
-              {{ value }}: {{ link }}
+          <li v-else-if="item.type === BlockTypeEnum.LINK">
+            <a :href="item.link" target="_blank">
+              {{ item.value }}: {{ item.link }}
             </a>
           </li>
           <li v-else>
-            <a :href="link" target="_blank">{{ value }}: {{ link }}</a>
+            <a :href="item.link" target="_blank">{{ item.value }}: {{ item.link }}</a>
           </li>
         </template>
+       
       </ul>
     </ScrollAnimation>
   </div>
@@ -32,5 +33,5 @@ import { BlockTypeEnum } from '@/enums/BlocksTypeEnum';
 
 defineOptions({
   name: 'Contacts'
-});
+})
 </script>

@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import About from '../components/About.vue'
-import Skills from '../components/Skills.vue'
-import Experience from '../components/Experience.vue'
-import Projects from '../components/Projects.vue'
-import Contacts from '../components/Contacts.vue'
+import About from '@/components/About.vue'
+import Skills from '@/components/Skills.vue'
+import Experience from '@/components/Experience.vue'
+import Projects from '@/components/Projects.vue'
+import Contacts from '@/components/Contacts.vue'
 
 const routes = [
   {

@@ -5,9 +5,20 @@
         <div class="about__profile-picture">
           <img src="/photo.jpg" alt="Айдар Максимов">
         </div>
-        <h1>Максимов Айдар</h1>
-        <p>Frontend-разработчик (Middle)</p>
-        <p>Email: <a href="mailto:aydarmaximov@yandex.ru">aydarmaximov@yandex.ru</a></p>
+        <template v-for="item in PERSON">
+          <h1 v-if="item.name === 'name'" :key="item.id">
+            {{ item.value }}
+          </h1>
+          <p v-else-if="item.name === 'position'">
+            {{ item.value }}
+          </p>
+          <p v-else-if="item.type === 'link'">
+            {{ item.name }}
+            <a :href="item.value">
+              {{ item.value }}
+            </a>
+          </p>
+        </template>
       </div>
     </scroll-animation>
     
@@ -17,63 +28,79 @@
         <p>Привет! Меня зовут <strong>Максимов Айдар</strong>, я Frontend-разработчик с опытом работы более 4 лет. Специализируюсь на разработке веб-приложений с использованием современных технологий.</p>
         
         <h3>Личная информация</h3>
-        <ul>
-          <li>📍 Проживаю: Казань, Россия</li>
-          <li>📧 Email: <a href="mailto:aydarmaximov@yandex.ru">aydarmaximov@yandex.ru</a></li>
-          <li>💻 GitHub: <a href="https://github.com/Aidrocker" target="_blank">https://github.com/Aidrocker72</a></li>
-          <li>👨‍💻 ВКонтакте: <a href="https://vk.com/id232037611" target="_blank">https://vk.com/id232037611</a></li>
+        <ul v-for="item in CONTACTS">
+          <li v-if="!item.type" :key="item.id">
+            {{ item.icon }} {{ item.value }}
+          </li>
+          <li v-else-if="item.type === BlockTypeEnum.MAIL">
+            {{ item.icon }} {{ item.value }}: 
+            <a :href="`mailto: ${item.link}`">
+              {{ item.link }}
+            </a>
+          </li>
+          
+          <li v-else>{{ item.icon }} {{ item.value }}: 
+            <a :href="item.link" target="_blank">
+              {{ item.value }}
+            </a>
+          </li>
         </ul>
         
         <h3>Образование</h3>
         <div class="about__education">
-          <div class="about__education-item">
-            <h4>Казанский (Приволжский) федеральный университет, Казань</h4>
-            <p>Программная инженерия</p>
-            <p>2021 · Магистр</p>
-          </div>
-          
-          <div class="about__education-item">
-            <h4>Казанский (Приволжский) федеральный университет, Казань</h4>
-            <p>Финансовый менеджмент</p>
-            <p>2019 · Бакалавр</p>
+          <div class="about__education-item" v-for="item in EDUCATION" :key="item.id">
+            <h4>{{ item.value }}</h4>
+            <p>{{ item.specialization }}</p>
+            <p>{{ item.year }} · {{ item.level }}</p>
           </div>
         </div>
         
         <h3>Повышение квалификации</h3>
         <ul>
-          <li><strong>IT PARK, Frontend</strong> (2019)</li>
+          <li v-for="item in COURSES" :key="item.id">
+            <strong>{{ item.value }}</strong>
+            {{ item.year }}
+          </li>
         </ul>
         
         <h3>Личные качества</h3>
         <ul>
-          <li>Внимательность</li>
-          <li>Тщательность</li>
-          <li>Эффективность</li>
-          <li>Ответственность</li>
+          <li v-for="item in PERSON_QUALITIES" :key="item">
+            {{ item }}
+          </li>
         </ul>
         
         <h3>Хобби</h3>
         <ul>
-          <li>Изучение языков</li>
-          <li>Чтение книг</li>
-          <li>Разработка веб-приложений</li>
-          <li>Сноубординг</li>
+          <li v-for="item in HOBBY" :key="item">
+            {{ item }}
+          </li>
         </ul>
         
         <h3>Знание языков</h3>
         <ul>
-          <li><strong>Русский</strong>: Родной</li>
-          <li><strong>Английский</strong>: B1 (Средний)</li>
+          <li v-for="item in LANGUAGES" :key="item.id">
+            <strong>{{ item.value }}</strong>: 
+            {{ item.level }}
+          </li>
         </ul>
       </section>
     </scroll-animation>
   </div>
 </template>
 
-<script setup>
-import ScrollAnimation from './ScrollAnimation.vue'
+<script setup lang="ts">
+import ScrollAnimation from '@/components/ScrollAnimation.vue';
+import { CONTACTS } from '@/constants/contacts';
+import { COURSES } from '@/constants/courses';
+import { EDUCATION } from '@/constants/education';
+import { HOBBY } from '@/constants/hobby';
+import { LANGUAGES } from '@/constants/languages';
+import { PERSON } from '@/constants/person';
+import { PERSON_QUALITIES } from '@/constants/personal-qualities';
+import { BlockTypeEnum } from '@/enums/BlocksTypeEnum';
 
 defineOptions({
   name: 'About'
-})
+});
 </script>
